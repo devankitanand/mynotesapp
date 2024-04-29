@@ -1,7 +1,10 @@
-import axios from 'axios'
-// import {useState} from 'react'
+import axios from 'axios';
 import { IS_LOGIN, USER_LOGIN_FAIL, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS } from '../constants/userconstants';
+// const baseURL = process.env.NODE
 
+// const api = axios.create({
+//     baseURL: baseURL
+//   });
 
 export const loginsubmitt = (details)=> async(dispatch) =>{
    
@@ -14,7 +17,7 @@ export const loginsubmitt = (details)=> async(dispatch) =>{
             }
         }
         console.log(details);
-        const {data} = await axios.post("/user/login",details,config)
+        const {data} = await axios.post("https://mynotesapp-yd7g.onrender.com/user/login",details,config)
         console.log(data)
         if (data.message === "login succes"){
             // setisLogin(true)
@@ -37,7 +40,7 @@ export const registeraction = (details)=>async(dispatch)=>{
     }
     try {
         console.log(details);
-        const {data} = await axios.post("/user/register",details,config)
+        const {data} = await axios.post("https://mynotesapp-yd7g.onrender.com/user/register",details,config)
         if(data.message === "user already exists"){
             alert("User already exist")
         }else{
