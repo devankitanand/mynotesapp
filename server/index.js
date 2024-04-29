@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 const dotenv = require("dotenv")
@@ -10,7 +11,10 @@ connectDB();
 const userRoutes = require('./routes/userRoutes')
 const notesRoutes = require('./routes/notesRoutes')
 
-
+app.use(cors({
+  origin: "https://notes13.netlify.app/",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 
 app.get("/",(req,res)=>{[
     res.json({
