@@ -12,7 +12,7 @@ const userRoutes = require('./routes/userRoutes')
 const notesRoutes = require('./routes/notesRoutes')
 
 app.use(cors({
-  origin: "https://notes13.netlify.app/",
+  origin: "https://notes13.netlify.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 
