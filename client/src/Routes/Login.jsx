@@ -1,6 +1,5 @@
-import {useEffect, useState} from 'react'
-import axios from 'axios'
-import { Navigate , useNavigate } from 'react-router-dom'
+import { useState} from 'react'
+import { Navigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginsubmitt, registeraction } from '../actions/useractions'
 
@@ -9,18 +8,6 @@ const Login = () => {
     const [signup, setSignup] = useState(false)
     const dispatch = useDispatch()
     const isLogin = useSelector((state) => state.userLogin.islogin);
-    // const userInfo = useSelector((state) => state.userLogin.userInfo);
-    // const navigate = useNavigate();
-   
-    // useEffect(() => {
-    //     if(isLogin){
-    //        navigate('/home')
-    //     }
-    //     else{
-    //          navigate('/')
-    //     }
-
-    // },[isLogin,navigate])
     console.log(isLogin)
     const submitHandler = (e) => {
         e.preventDefault();

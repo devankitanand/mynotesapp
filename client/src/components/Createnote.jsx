@@ -1,5 +1,5 @@
-import React, { useState , useEffect } from 'react'
-import { useDispatch , useSelector} from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch} from 'react-redux'
 import { createNoteAction } from '../actions/notesAction';
 import { listNotes } from '../actions/notesAction'
 
@@ -8,8 +8,8 @@ const Createnote = () => {
     const dispatch = useDispatch();
     // const noteCreate = useSelector((state)=> state.noteCreate);
     // const {loading , error , note} = noteCreate
-    const noteCreate = useSelector((state)=> state.NoteCreate);
-    const { note } = noteCreate;
+    // const noteCreate = useSelector((state)=> state.NoteCreate);
+    // const { note } = noteCreate;
     const submit=(e)=>{
         e.preventDefault();
         if(!createnote.title && !createnote.content){

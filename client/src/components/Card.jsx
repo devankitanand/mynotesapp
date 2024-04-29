@@ -1,13 +1,13 @@
 import React from 'react'
 import delicon from '../assests/delete.png';
-import { useSelector , useDispatch} from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { deleteNoteAction, listNotes } from '../actions/notesAction';
 
 
 const Card = (props) => {
   const dispatch = useDispatch();
-  const noteDelete = useSelector(state => state.noteDelete);
-  const {loading,error,success} = noteDelete;
+  // const noteDelete = useSelector(state => state.noteDelete);
+  // const {loading,error,success} = noteDelete;
   const ids = props.id;
   const deletehandler = () =>{
     dispatch(deleteNoteAction(ids));
